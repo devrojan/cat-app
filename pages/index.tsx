@@ -51,12 +51,6 @@ export default function Home({ breeds }: { breeds: Breed[] }) {
     }
   };
 
-  const changeBreed = (breed: Breed) => {
-    setSelectedBreed(breed);
-    setPage(1);
-    getCats(breed.id);
-  };
-
   const loadMore = async () => {
     try {
       setLoading(true);
@@ -81,6 +75,12 @@ export default function Home({ breeds }: { breeds: Breed[] }) {
         "Apologies but we could not load new cats for you at this time! Miau!"
       );
     }
+  };
+
+  const changeBreed = (breed: Breed) => {
+    setSelectedBreed(breed);
+    setPage(1);
+    getCats(breed.id);
   };
 
   useEffect(() => {

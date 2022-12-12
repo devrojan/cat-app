@@ -20,8 +20,6 @@ interface Cat {
 }
 
 export default function Cat({ cat }: { cat: Cat | null }) {
-  const router = useRouter();
-
   if (cat === null) {
     return (
       <div className="flex flex-col justify-center items-center h-screen">
